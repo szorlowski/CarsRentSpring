@@ -1,4 +1,4 @@
-package com.risalyth;
+package com.cars.rent;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

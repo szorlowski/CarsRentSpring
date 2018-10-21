@@ -1,4 +1,4 @@
-package com.risalyth.config;
+package com.cars.rent.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackages = "com.risalyth")
+@ComponentScan(basePackages = "com.cars.rent")
 @EnableWebMvc
 @EnableAspectJAutoProxy
 public class SpringConfig implements WebMvcConfigurer {

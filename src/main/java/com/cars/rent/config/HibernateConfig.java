@@ -1,4 +1,4 @@
-package com.risalyth.config;
+package com.cars.rent.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -22,7 +23,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @PropertySource({"classpath:postgres-jdbc.properties"})
-@ComponentScan({"com.risalyth"})
+@ComponentScan({"com.cars.rent"})
 public class HibernateConfig {
 
     @Autowired
@@ -33,7 +34,7 @@ public class HibernateConfig {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(restDataSource());
         sessionFactory.setPackagesToScan(
-                "com.risalyth");
+                "com.cars.rent");
         sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;

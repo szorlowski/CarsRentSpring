@@ -5,7 +5,7 @@ plugins {
     id 'net.ltgt.apt' version '0.10'
 }
 
-group 'Risalyth'
+group 'CarsRentSpring'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -25,7 +25,6 @@ dependencies {
     testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.1.1'
     testCompile group: 'io.rest-assured', name: 'spring-mock-mvc', version: '3.1.1'
     testCompile group: 'org.springframework', name: 'spring-test', version: '5.1.0.RELEASE'
-
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.0.5.RELEASE'
 
 //    spring
