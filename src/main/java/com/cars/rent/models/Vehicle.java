@@ -31,23 +31,25 @@ public class Vehicle {
     private int stars;
     
     @JsonIgnore
-    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
     private List<Rent> rents;
-    
+
     private boolean anyDayMatch(List<LocalDate> list) {
         return list.stream().anyMatch(getAllDatesFromRents()::contains);
     }
-    
+
     private boolean anyDayMatch(List<LocalDate> list, List<LocalDate> list2) {
         return list.stream().anyMatch(list2::contains);
     }
-    
-    private List<LocalDate> getAllDatesFromRents() {
+
+    @JsonIgnore
+    public List<LocalDate> getAllDatesFromRents() {
         return rents
                 .stream()
                 .map(rent -> DateUtils.getDaysBetweenDates(rent.getRentedFrom(), rent.getRentedTo()))
                 .flatMap(List::stream)
                 .distinct()
+                .filter(date -> date.isAfter(LocalDate.now().minusDays(1)))
                 .collect(Collectors.toList());
     }
     

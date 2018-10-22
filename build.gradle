@@ -53,4 +53,5 @@ dependencies {
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.6.Final'
     compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '7.1.1.jre8-preview'
 }

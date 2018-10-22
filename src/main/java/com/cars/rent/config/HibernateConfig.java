@@ -22,7 +22,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource({"classpath:postgres-jdbc.properties"})
+@PropertySource({"classpath:mssql-jdbc.properties"})
 @ComponentScan({"com.cars.rent"})
 public class HibernateConfig {
 

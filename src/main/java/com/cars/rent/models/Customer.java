@@ -23,6 +23,6 @@ public class Customer {
     String password;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer")
     private List<Rent> rents;
 }

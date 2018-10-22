@@ -11,7 +11,7 @@ public class DateUtils {
     public static List<LocalDate> getDaysBetweenDates(LocalDate from, LocalDate to){
         return Stream
                 .iterate(from, date -> date.plusDays(1))
-                .limit(ChronoUnit.DAYS.between(from, to))
+                .limit(ChronoUnit.DAYS.between(from, to) + 1)
                 .collect(Collectors.toList());
     }
 }
